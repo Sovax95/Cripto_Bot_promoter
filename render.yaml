@@ -1,0 +1,17 @@
+
+services:
+  - type: web
+    name: cryptobot-promoter
+    env: python
+    plan: free
+    branch: main
+    runtime: python
+    buildCommand: ""
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: seu_token_aqui
+      - key: TELEGRAM_CHAT_ID
+        value: seu_chat_id_aqui
+      - key: ENV
+        value: prod
